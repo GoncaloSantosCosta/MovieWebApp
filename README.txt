@@ -1,5 +1,5 @@
 This is a group project as part of the Databases and Information Analysis course from the 
-Masters in Biomedichal Engineering at the University of Coimbra. It marked our fist time 
+Masters in Biomedichal Engineering at the University of Coimbra. It marked our first time 
 using SQL, Django, HTML and CSS.
 
 -The 'bd dados' file has the SQL code for 10 movies to be added in the PostGreSQL database

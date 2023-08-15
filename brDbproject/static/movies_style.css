@@ -1,0 +1,211 @@
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.trailer{
+    width: 100vw;
+    height: 100vh;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title{
+  position: absolute;
+  color: #FFFFFF;
+  left: 12px;
+  bottom: 50px;
+  width: 500px;
+}
+
+.info {
+    position: absolute;
+    color: #FFFFFF;
+    left: 30px;
+    bottom: 10px;
+}
+
+.backbutton {
+	border: 0;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background: rgb(112, 117, 122);
+	cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 15px; 
+}
+
+.homebutton {
+	border: 0;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background: rgb(112, 117, 122);
+	cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 15px; 
+}
+
+.backbutton img, .homebutton img {
+	width: 14px;
+	height: 14px;
+}
+
+span{
+    content: "\2605"
+}
+
+.title h1 {
+    font-size: 50;
+}
+
+body {
+	color: #FFFFFF;
+	background-color: rgb(75, 77, 80);
+	font-weight: 300;
+    padding:0;
+    margin:0;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+}
+  
+.tabs {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+.tabs:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #111;
+}
+
+#crew, #reviews_tab {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.faces {
+    height: 40px;
+    width: 40px;
+    float: left;
+    object-fit: cover;
+    border-style: solid; 
+    border-width: 1px;
+    border-color: black; 
+    border-radius: 4%;
+    margin: 5px;
+}
+
+.names {
+  color: rgb(213, 216, 218);
+  margin: 2px 0 0 0;
+  text-align: left;
+  float: left;
+  padding-top: 15px;
+}
+
+span {
+    font-size: 10;
+}
+
+.details p {
+    padding: 10px;
+    font-weight: 700;
+}
+
+.odd {
+	background-color: rgba(242, 241, 241, .2);
+}
+
+.odd, .even {
+	padding: 10px 10px 5px 5px;
+	text-align: justify;
+	line-height: 130%;
+}
+
+.divs {
+    display: block; 
+    width: auto;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.divs:hover {
+    background-color: #333;
+}
+
+.username {
+	font-size: 12px;
+	color: aliceblue;
+	margin-left: 10px;
+	clear: left;
+}
+
+.rating {
+	background-color: #fff;
+	border-radius: 24px;
+	color: #3c4043;
+	display: inline-block;
+	font-size: 16px;
+	height: 30px;
+	padding: 2px 24px;
+    position: absolute;
+    right: 10;
+}
+
+footer {
+    margin-top: 50px;
+    padding: auto;
+    height: 180px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+footer img {
+	width: auto;
+	height: 50px;
+	margin: 15px;
+}
+
+footer img:hover {
+	opacity: 100%;
+	transition: opacity 0.1s;
+}
+
+.flex-wrapper {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+}

@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+	background-color: #1d1d1d;
+	color: white;
+	font-size: 18px;
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+html {
+    position: relative;
+}
+
+body {
+	color: #1d1d1d;
+	background-color: rgb(75, 77, 80);
+	font-weight: 300;
+    padding:0;
+    margin:0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.backbutton {
+	border: 0;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background: rgb(112, 117, 122);
+	cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 15px; 
+}
+
+.homebutton {
+	border: 0;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background: rgb(112, 117, 122);
+	cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 15px; 
+}
+
+.backbutton img, .homebutton img {
+	width: 14px;
+	height: 14px;
+}
+
+button:hover {
+	opacity: 50%;
+	transition: opacity 0.1s;
+}
+
+.photo {
+    width: 400px;
+    height: auto;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-style: solid;	
+	border-width: 1px;
+	border-color: rgb(232, 232, 233);
+	border-radius: 4%;
+}
+
+h3{
+    margin-right: 60px;
+    padding: 10px;
+    color: rgb(213, 216, 218);
+}
+
+h4{
+	margin: 5px;
+    padding: 10px;
+    color: rgb(213, 216, 218);
+}
+
+.container_lists {
+	background-color: #2c2c2c;
+}
+
+.img_cover {
+	border-style: solid;	
+	border-width: 1px;
+	border-color: rgb(232, 232, 233);
+	border-radius: 4%;
+	width: 202.6px;
+	height: 300px;
+	margin: 15px;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	height: 350px;
+	align-items: center;
+	padding: 5px;
+}
+
+.img_cover:hover {
+	opacity: 50%;
+	transition: opacity 0.1s;
+}
+
+footer {
+    margin-top: 50px;
+    padding: auto;
+    height: 180px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+footer img {
+	width: auto;
+	height: 50px;
+	margin: 15px;
+}
+
+footer img:hover {
+	opacity: 100%;
+	transition: opacity 0.1s;
+}
+
+.flex-wrapper {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+}

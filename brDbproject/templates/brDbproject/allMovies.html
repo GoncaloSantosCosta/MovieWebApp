@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main_style.css' %}">
+</head>
+<body>
+
+    <header>
+        <form action="javascript:history.go(-1)">
+            <button class="backbutton" type="submit"><img src="https://cdn-icons-png.flaticon.com/512/271/271220.png"></button>
+        </form>
+        <h1>MORINI: Movie Database</h1>
+        <form action="/brDbproject/insert/">
+            <button class="addbutton" type="submit"><img src="https://cdn.pixabay.com/photo/2014/04/02/10/55/plus-304947_1280.png"></button>
+        </form>
+    </header>
+
+    <br>
+    <div class="flex-wrapper">
+    {% if movies %}
+        <div class="flex-container_all">
+            {% for movieROW in movies %}
+            <a href="/brDbproject/movies/{{movieROW.id}}/"><img src="{{movieROW.coverURL}}" alt="{{movieROW.title}}" class="img_cover"></a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No movies to show.</p>
+    {% endif %}
+    </div>
+
+    <footer>
+        <br>
+        <b><p style="font-size:larger">Bases de Dados e Análise de Informação</p></b>
+
+        <img src="https://www.uc.pt/static/images/logo-uc-v2019-web.png"/>
+
+        <p>Gonçalo Costa 2018279575</p>
+        <p>Filipa Moreira 2018297005</p>
+        
+    </footer>
+    
+</body>
+</html>

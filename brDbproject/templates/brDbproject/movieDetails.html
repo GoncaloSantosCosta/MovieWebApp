@@ -1,0 +1,128 @@
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'movies_style.css' %}">
+</head>
+<header class="header-container">
+        <div class="trailer">
+            <iframe frameborder="0" src="{{movie.movieURL}}?autoplay=1&mute=1&controls=0" allowfullscreen></iframe>
+        </div>
+        <div>
+            <form action="javascript:history.go(-1)">
+                <button class="backbutton" type="submit"><img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" class="backimg"></button>
+            </form>
+        </div>
+        <div>
+            <form action="/brDbproject/">
+                <button class="homebutton" type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/1200px-Home-icon.svg.png"></button>
+            </form>
+        </div>
+        <div class="title">
+            <h1>{{movie.title}}</h1>
+        </div>
+        <div class="info">
+            <p>{{movie.year}} &#x2022; {{movie.duration}} min &#x2022; {{movie.imdb_r}}/10</p>
+            <p>{{movie.country}} &#x2022; {{movie.language}}</p>
+        </div>
+</header>
+<body onload="document.getElementById('default').click();"> <!--por default fazemos este click para aparecer os atores quando abrimos a página-->
+
+    <div class="details">
+        <p><br>{{movie.summary}} <br><br> </p>
+    </div>
+    <div class="all">
+        <ul class="menu">
+            <li id="default" onclick="openTab(event, 'actors')" class="tabs">Actors</li>
+            <li onclick="openTab(event, 'crew')" class="tabs">Crew</li>
+            <li onclick="openTab(event, 'reviews_tab')" class="tabs">Reviews</li>
+        </ul>
+
+        <div class="container" id="actors">
+            {% if actors %} 
+                {% for actorROW in actors %}
+                <div class="divs">
+                    <a href="/brDbproject/actors/{{actorROW.id}}/">
+                        <img class="faces" src="{{actorROW.castcrewURL}}">
+                        <p class="names">{{actorROW.name}}</p>
+                    </a>
+                </div>
+                <hr color = "DimGray">
+                {% endfor %}
+            {% else %}
+                <p>No actors to show.</p>
+            {% endif %}
+        </div>
+        <div class="container" id="crew">
+            {% if directors %}
+                {% for directorROW in directors %}
+                <div class="divs">
+                    <a href="/brDbproject/directors/{{directorROW.id}}/">
+                        <img class="faces" src="{{directorROW.castcrewURL}}">
+                        <p class="names">{{directorROW.name}}<br><span>as {{directorROW.role}}</span></p>
+                    </a>
+                </div>
+                <hr color = "DimGray">
+                {% endfor %}
+            {% else %}
+                <p>No directors to show.</p>
+            {% endif %}
+            {% if writers %}
+                {% for writerROW in writers %}
+                <div class="divs">
+                    <a href="/brDbproject/writers/{{writerROW.id}}/">
+                        <img class="faces" src="{{writerROW.castcrewURL}}">
+                        <p class="names">{{writerROW.name}}<br><span>as {{writerROW.role}}</span></p>
+                    </a>
+                </div>
+                <hr color = "DimGray">
+                {% endfor %}
+            {% else %}
+                <p>No writers to show.</p>
+            {% endif %}
+        </div>
+        <div class="container" id="reviews_tab">
+            {% if reviews %}
+            <table>
+                {% for reviewROW in reviews %}
+                <div class="{% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+                    <div class="rating"><p>{{reviewROW.rating}}/10</p></div>
+                    <h3>{{reviewROW.title}}</h3>
+                    <p class="username">{{reviewROW.username}}</p>
+                    <p>{{reviewROW.content}}</p>
+                </div>
+                {% endfor %}
+            </table>
+            {% else %}
+                <p>No reviews to show.</p>
+            {% endif %}
+        </div>
+    </div>
+<script>
+    function openTab(evt, tab) {
+        //inicialmente conteúdo das tabs não aparece
+        tabcontent = document.getElementsByClassName("container");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tabbutton = document.getElementsByClassName("tabs");
+        for (i = 0; i < tabbutton.length; i++) {
+            tabbutton[i].className = tabbutton[i].className.replace(" active", "");
+        }
+        //quando carregamos numa tab ela abre, passando a estar 'ativa'
+        document.getElementById(tab).style.display = "block";
+        event.currentTarget.className += " active";
+}
+</script>
+
+<footer>
+    <br>
+    <b><p style="font-size:larger">Bases de Dados e Análise de Informação</p></b>
+
+    <img src="https://www.uc.pt/static/images/logo-uc-v2019-web.png"/>
+
+    <p>Gonçalo Costa 2018279575</p>
+    <p>Filipa Moreira 2018297005</p>
+    
+</footer>
+</body>
+</html>

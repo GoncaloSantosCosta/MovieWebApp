@@ -1,0 +1,46 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'form_style.css' %}">
+    </head>
+  <header>
+    <div>
+      <h1>Insert a Cast or Crew Member</h1>
+    </div>
+    <div>
+      <form action="javascript:history.go(-1)">
+          <button class="backbutton" type="submit"><img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" class="backimg"></button>
+      </form>
+    </div>
+    <div>
+      <form action="/brDbproject/">
+          <button class="homebutton" type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/1200px-Home-icon.svg.png"></button>
+      </form>
+    </div>
+  </header>
+<body>
+<div class="flex-wrapper">
+<div class="container">
+    <form method="POST" id="castcrewForm" novalidate>
+      <fieldset>
+        {% csrf_token %}
+        {{ form.as_p }}
+      </fieldset>
+    </form>
+    <button type="submit" form="castcrewForm" class="btn btn-primary"><h3>Submit</h3></button>
+</div>
+
+<footer>
+  <br>
+  <b><p style="font-size:larger">Bases de Dados e Análise de Informação</p></b>
+
+  <img src="https://www.uc.pt/static/images/logo-uc-v2019-web.png"/>
+
+  <p>Gonçalo Costa 2018279575</p>
+  <p>Filipa Moreira 2018297005</p>
+  
+</footer>
+</div>
+
+</body>
+</html>

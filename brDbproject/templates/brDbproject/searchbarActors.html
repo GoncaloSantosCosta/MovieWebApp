@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'search_style.css' %}">
+</head>
+<body>
+
+    <header>
+        <form action="javascript:history.go(-1)">
+            <button class="backbutton" type="submit"><img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" class="backimg"></button>
+        </form>
+        <div>
+            <h1>Actor Search Results</h1>
+        </div>
+        <form action="/brDbproject/">
+            <button class="homebutton" type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/1200px-Home-icon.svg.png"></button>
+        </form>
+    </header>
+
+    <div class="flex-wrapper">
+    {% if result %}
+        <br>
+        {% for i in result %}
+            <div class="results">
+                <a href="/brDbproject/actors/{{i.id}}/">
+                <img src={{i.castcrewURL}} alt="{{i.castcrewURL}}" class="img_cover">
+                <br><br>
+                <h3>{{i.name}}</h3>
+                </a>
+            </div>
+            <hr color = "DimGray";>
+        {% endfor %}
+    {% else %}
+        <center><br><br><br><h2>No Actors Found.</h2></center>
+    {% endif %}
+
+    <footer>
+        <br>
+        <b><p style="font-size:larger">Bases de Dados e Análise de Informação</p></b>
+
+        <img src="https://www.uc.pt/static/images/logo-uc-v2019-web.png"/>
+
+        <p>Gonçalo Costa 2018279575</p>
+        <p>Filipa Moreira 2018297005</p>
+        
+    </footer>
+    </div>
+</body>
+</html>

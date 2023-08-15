@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'castcrew_style.css' %}">
+</head>
+<body>
+
+    <header>
+        <form action="javascript:history.go(-1)">
+            <button class="backbutton" type="submit"><img src="https://cdn-icons-png.flaticon.com/512/271/271220.png"></button>
+        </form>
+        <div>
+            <h1>{{castcrew.name}}</h1>
+        </div>
+        <form action="/brDbproject/">
+            <button class="homebutton" type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/1200px-Home-icon.svg.png"></button>
+        </form>
+    </header>
+
+    <br/><br/>
+    <div class="flex-wrapper">
+    <div style="display:flex;">
+        <div>
+            <img src={{castcrew.castcrewURL}} alt={{castcrew.name}}-{{castcrew.castcrewURL}} class="photo">
+        </div>
+        <div>
+            <h3 style="text-align:justify;">{{castcrew.biography}}</h3>
+        </div>   
+    </div>
+
+    <br><br><hr color = "DimGray">
+
+    <h4>{{castcrew.role}} in {{nummovies}} movies</h4>
+    <hr color = "DimGray">
+
+    <div class="container_lists">
+        {% if movies %}
+        <div class="flex-container">
+            {% for movieROW in movies %}
+            <a href="/brDbproject/movies/{{movieROW.id}}/"><img src="{{movieROW.coverURL}}" alt="{{movieROW.title}}" class="img_cover"></a>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p>No movies to show.</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <br>
+        <b><p style="font-size:larger">Bases de Dados e Análise de Informação</p></b>
+
+        <img src="https://www.uc.pt/static/images/logo-uc-v2019-web.png"/>
+
+        <p>Gonçalo Costa 2018279575</p>
+        <p>Filipa Moreira 2018297005</p>
+        
+    </footer>
+    </div>
+</body>
+</html>

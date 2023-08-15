@@ -1,0 +1,174 @@
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+html {
+    position: relative;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+	background-color: #1d1d1d;
+	color: white;
+	font-size: 18px;
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.backbutton {
+	border: 0;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background: rgb(112, 117, 122);
+	cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 15px; 
+}
+
+.homebutton {
+	border: 0;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background: rgb(112, 117, 122);
+	cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 15px; 
+}
+
+.backbutton img, .homebutton img {
+	width: 14px;
+	height: 14px;
+}
+
+fieldset {
+	padding: 10px;
+	border:none;
+}
+
+body {
+	color: white;
+	background-color: rgb(75, 77, 80);
+	font-weight: 300;
+    padding:0;
+    margin:0;
+}
+
+input, textarea, select {
+	background-color: rgb(75, 77, 80);
+	color: white;
+	padding: 5px;
+	border-radius: 4px;
+	border: 1px solid white;
+}
+
+input[type=text], input[type=number], input[type=url], textarea {
+	display: block;
+}
+
+input:focus, textarea:focus {
+	background-color: rgba(202, 202, 202, 0.25);
+}
+
+p {
+	padding: 5px;
+}
+
+p label {
+	float: left;
+	width: 150px;
+}
+
+#id_castcrews {
+	display: block; 
+	clear: both;
+	padding: 5px;
+	height: 150px;
+	overflow-y: scroll;
+}
+
+.helptext {
+	font-size: x-small;
+	color: darkgrey;
+	margin-left: 150px;
+}
+
+.btn {
+	align-items: center;
+	background-color: #fff;
+	border-radius: 24px;
+	color: #3c4043;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 16px;
+	height: 40px;
+	justify-content: center;
+	padding: 2px 24px;
+	text-align: center;
+	margin: 10px;
+}
+
+.addbutton {	
+	border-radius: 24px;
+	width: 60px;
+	height: 60px;
+	font-size: 16px;
+	background: rgb(255, 255, 255);
+	color: #3c4043;
+	cursor: pointer;
+}
+
+.addbutton:hover {
+	opacity: 50%;
+	transition: opacity 0.1s;
+}
+
+.errorlist {
+	font-weight: 500;
+	font-size: 12;
+	color: tomato;
+	list-style: none;
+}
+
+footer {
+    margin-top: 50px;
+    padding: auto;
+    height: 180px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+footer img {
+	width: auto;
+	height: 50px;
+	margin: 15px;
+}
+
+footer img:hover {
+	opacity: 100%;
+	transition: opacity 0.1s;
+}
+
+.flex-wrapper {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+

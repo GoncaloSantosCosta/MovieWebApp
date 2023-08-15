@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main_style.css' %}">
+</head>
+<body>
+    
+    <header>
+        <form action="/brDbproject/insert/">
+            <button class="addbutton" type="submit"><img src="https://cdn.pixabay.com/photo/2014/04/02/10/55/plus-304947_1280.png"></button>
+        </form>
+        <h1>MORINI: Movie Database</h1>
+    </header>
+
+    <br>
+    <div class="flex-wrapper">
+    <div class="search-options">
+        <h3 id="default" class="changeButton" onclick="openTab(event, 'movie')">Movies</a></h3>
+        <h3 class="changeButton" onclick="openTab(event, 'actor')">Actors</a></h3>
+        <h3 class="changeButton" onclick="openTab(event, 'writer')">Writers</a></h3>
+        <h3 class="changeButton" onclick="openTab(event, 'director')">Directors</a></h3>
+    </div>
+
+    <div class="search-tab" id="movie">
+        <form action="{% url 'searchbar' %}" method="get" class="search-bar">
+            <input type="text" placeholder = "Search for a Movie" name="search"/>
+            <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"></button>
+        </form>
+    </div>
+    <div class="search-tab" id="actor">
+        <form action="{% url 'searchbarActors' %}" method="get" class="search-bar">
+            <input type="text" placeholder = "Search for an Actor" name="search"/>
+            <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"></button>
+        </form>
+    </div>
+    <div class="search-tab" id="director">
+        <form action="{% url 'searchbarDirectors' %}" method="get" class="search-bar">
+            <input type="text" placeholder = "Search for a Director" name="search"/>
+            <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"></button>
+        </form>
+    </div>
+    <div class="search-tab" id="writer">
+        <form action="{% url 'searchbarWriters' %}" method="get" class="search-bar">
+            <input type="text" placeholder = "Search for a Writer" name="search"/>
+            <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"></button>
+        </form>
+    </div>
+
+    <br><br>
+
+    <div>
+    <h2>Top Rated Movies:</h2>
+    {% if topmovies %}
+        <div class="flex-container">
+            {% for topmovieROW in topmovies %}
+            <a href="/brDbproject/movies/{{topmovieROW.id}}/"><img src="{{topmovieROW.coverURL}}" alt="{{topmovieROW.title}}" class="img_cover"></a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No movies to show.</p>
+    {% endif %}
+    </div>
+    
+    <br>
+
+    <div>
+    <h2>Oldest Movies:</h2>
+    {% if oldmovies %}
+        <div class="flex-container">
+            {% for oldmovieROW in oldmovies %}
+            <a href="/brDbproject/movies/{{oldmovieROW.id}}/"><img src="{{oldmovieROW.coverURL}}" alt="{{oldmovieROW.title}}" class="img_cover"></a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No movies to show.</p>
+    {% endif %}
+    </div>
+    
+    <br>
+    
+    <div>
+    <h2>Most Recent Movies:</h2>
+    {% if newmovies %}
+        <div class="flex-container">
+            {% for newmovieROW in newmovies %}
+            <a href="/brDbproject/movies/{{newmovieROW.id}}/"><img src="{{newmovieROW.coverURL}}" alt="{{newmovieROW.title}}" class="img_cover"></a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No movies to show.</p>
+    {% endif %}
+    </div>
+
+    <br>
+
+    <div>
+    <h2>Longest Movies:</h2>
+    {% if longmovies %}
+        <div class="flex-container">
+            {% for longmovieROW in longmovies %}
+            <a href="/brDbproject/movies/{{longmovieROW.id}}/"><img src="{{longmovieROW.coverURL}}" alt="{{longmovieROW.title}}" class="img_cover"></a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No movies to show.</p>
+    {% endif %}
+    </div>
+
+    <br>
+
+    <div>
+    <h2>Shortest Movies:</h2>
+    {% if shortmovies %}
+        <div class="flex-container">
+            {% for shortmovieROW in shortmovies %}
+            <a href="/brDbproject/movies/{{shortmovieROW.id}}/"><img src="{{shortmovieROW.coverURL}}" alt="{{shortmovieROW.title}}" class="img_cover"></a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No movies to show.</p>
+    {% endif %}
+    </div>
+
+    <br>
+
+    <div>
+    <u><h2><a href="/brDbproject/movies/">Full Movie List ({{nmovies}} Movies) ></a></h2></u>
+    </div>
+
+    <br><br>
+
+    <footer>
+        <br>
+        <b><p style="font-size:larger">Bases de Dados e Análise de Informação</p></b>
+
+        <img src="https://www.uc.pt/static/images/logo-uc-v2019-web.png"/>
+
+        <p>Gonçalo Costa 2018279575</p>
+        <p>Filipa Moreira 2018297005</p>
+        
+    </footer>
+    </div>
+    <script>
+        function openTab(evt, tab) {
+            //inicialmente conteúdo das tabs não aparece
+            tabcontent = document.getElementsByClassName("search-tab");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tabbutton = document.getElementsByClassName("changeButton");
+            for (i = 0; i < tabbutton.length; i++) {
+                tabbutton[i].className = tabbutton[i].className.replace(" active", "");
+            }
+            //quando carregamos numa tab ela abre, passando a estar 'ativa'
+            document.getElementById(tab).style.display = "flex";
+            event.currentTarget.className += " active";
+    }
+    </script>
+</body>
+</html>
